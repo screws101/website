@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- This is for responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	
+    <!-- css link -->
+    <link rel = "stylesheet" href = "css/master.css"/>
+    <link rel = "stylesheet" href = "css/meal_plan.css"/>
+
+    <!-- icon link -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    />
+
+    <!-- font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href = "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap"
+        rel="stylesheet"
+    />
+
+
+    <title>Meal Plan</title>
+
+
+</head>
+<!-- end of head -->
+
+
+<body>
+
+    <section class = "hero-page">
+
+        <!-- navbar -->
+        <nav>
+            <input type = "checkbox" id = "check">        <!-- invisible checkbox for menu -->
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Logo">
+            </a>
+            <label for="check" class="checkbtn">        <!-- makes a label for the hamburger icon and links it to the checkbox with check -->
+                <i class="fas fa-bars"></i>        <!-- when you click on it it toggles the checkbox state -->
+            </label>
+
+            <ul>
+                <li><a href="index.html" onClick="uncheckCheckbox()">Home</a></li>
+                <li><a href="meal_plan.html" onClick="uncheckCheckbox()">Meal Plan</a></li>
+                <li><a href="your_pantry.html" onClick="uncheckCheckbox()">Your Pantry</a></li>
+                <li><a href="recipes.html" onClick="uncheckCheckbox()">Recipes</a></li>
+                <li>
+                    <a href="grocery_list.html" class="btn-nav" onClick="uncheckCheckbox()">Grocery List</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- navbar end -->
+
+        <!-- Heropage content -->
+        <div class = "pg_header">
+            <h1 class = "header_name">Meal Plan</h1>
+            <hr class = "solid">
+        </div>
+        
+        <div class = "bottom_container">
+            <div class="container">
+                <div class=" table">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                            </tr>
+                            <tr>
+                                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                            </tr>
+                            <tr>
+                                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                            </tr>
+                            <tr>
+                                <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="breakfast"><p>Breakfast</p></div>
+                <div class="lunch"><p>Lunch</p></div>
+                <div class="dinner"><p>Dinner</p></div>
+                <div class="snacks"><p>Snacks</p></div>
+                <div class="sat"><p>Sat</p></div>
+                <div class="sun"><p>Sun</p></div>
+                <div class="mon"><p>Mon</p></div>
+                <div class="tues"><p>Tues</p></div>
+                <div class="wed"><p>Wed</p></div>
+                <div class="thurs"><p>Thurs</p></div>
+                <div class="fri"><p>Fri</p></div>
+              </div>
+              <div class="clear-button-wrapper"> <!-- <<< new wrapper div -->
+                <button id="clear-meal-plan" class="btn-clear">Clear Meal Plan</button>
+            </div>
+            <div id="confirmPopup" class="popup-overlay">
+                <div class="popup">
+                    <p>Are you sure you want to clear the meal plan?</p>
+                    <div class="popup-buttons">
+                        <button id="confirmYes" class="popup-btn">Yes</button>
+                        <button id="confirmNo" class="popup-btn">No</button>
+                    </div>
+                </div>
+            </div>
+             <!-- For mobile layout only -->
+             <div class="mobile-days">
+                <!-- Repeat this block for each day -->
+                <div class="mobile-days">
+                    <!-- Sunday -->
+                    <div class="mobile-day">
+                      <h3>Sunday</h3>
+                      <div class="mobile-meal-label">Breakfast:</div>
+                      <div class="mobile-meal" data-day="sunday" data-meal="breakfast"></div>
+                  
+                      <div class="mobile-meal-label">Lunch:</div>
+                      <div class="mobile-meal" data-day="sunday" data-meal="lunch"></div>
+                  
+                      <div class="mobile-meal-label">Dinner:</div>
+                      <div class="mobile-meal" data-day="sunday" data-meal="dinner"></div>
+                  
+                      <div class="mobile-meal-label">Snack:</div>
+                      <div class="mobile-meal" data-day="sunday" data-meal="snacks"></div>
+                    </div>
+                  
+                    <!-- Monday -->
+                    <div class="mobile-day">
+                      <h3>Monday</h3>
+                      <div class="mobile-meal-label">Breakfast:</div>
+                      <div class="mobile-meal" data-day="monday" data-meal="breakfast"></div>
+                  
+                      <div class="mobile-meal-label">Lunch:</div>
+                      <div class="mobile-meal" data-day="monday" data-meal="lunch"></div>
+                  
+                      <div class="mobile-meal-label">Dinner:</div>
+                      <div class="mobile-meal" data-day="monday" data-meal="dinner"></div>
+                  
+                      <div class="mobile-meal-label">Snack:</div>
+                      <div class="mobile-meal" data-day="monday" data-meal="snacks"></div>
+                    </div>
+                  
+                    <!-- Tuesday -->
+                    <div class="mobile-day">
+                      <h3>Tuesday</h3>
+                      <div class="mobile-meal-label">Breakfast:</div>
+                      <div class="mobile-meal" data-day="tuesday" data-meal="breakfast"></div>
+                  
+                      <div class="mobile-meal-label">Lunch:</div>
+                      <div class="mobile-meal" data-day="tuesday" data-meal="lunch"></div>
+                  
+                      <div class="mobile-meal-label">Dinner:</div>
+                      <div class="mobile-meal" data-day="tuesday" data-meal="dinner"></div>
+                  
+                      <div class="mobile-meal-label">Snack:</div>
+                      <div class="mobile-meal" data-day="tuesday" data-meal="snacks"></div>
+                    </div>
+                  
+                    <!-- Wednesday -->
+                    <div class="mobile-day">
+                      <h3>Wednesday</h3>
+                      <div class="mobile-meal-label">Breakfast:</div>
+                      <div class="mobile-meal" data-day="wednesday" data-meal="breakfast"></div>
+                  
+                      <div class="mobile-meal-label">Lunch:</div>
+                      <div class="mobile-meal" data-day="wednesday" data-meal="lunch"></div>
+                  
+                      <div class="mobile-meal-label">Dinner:</div>
+                      <div class="mobile-meal" data-day="wednesday" data-meal="dinner"></div>
+                  
+                      <div class="mobile-meal-label">Snack:</div>
+                      <div class="mobile-meal" data-day="wednesday" data-meal="snacks"></div>
+                    </div>
+                  
+                    <!-- Thursday -->
+                    <div class="mobile-day">
+                      <h3>Thursday</h3>
+                      <div class="mobile-meal-label">Breakfast:</div>
+                      <div class="mobile-meal" data-day="thursday" data-meal="breakfast"></div>
+                  
+                      <div class="mobile-meal-label">Lunch:</div>
+                      <div class="mobile-meal" data-day="thursday" data-meal="lunch"></div>
+                  
+                      <div class="mobile-meal-label">Dinner:</div>
+                      <div class="mobile-meal" data-day="thursday" data-meal="dinner"></div>
+                  
+                      <div class="mobile-meal-label">Snack:</div>
+                      <div class="mobile-meal" data-day="thursday" data-meal="snacks"></div>
+                    </div>
+                  
+                    <!-- Friday -->
+                    <div class="mobile-day">
+                      <h3>Friday</h3>
+                      <div class="mobile-meal-label">Breakfast:</div>
+                      <div class="mobile-meal" data-day="friday" data-meal="breakfast"></div>
+                  
+                      <div class="mobile-meal-label">Lunch:</div>
+                      <div class="mobile-meal" data-day="friday" data-meal="lunch"></div>
+                  
+                      <div class="mobile-meal-label">Dinner:</div>
+                      <div class="mobile-meal" data-day="friday" data-meal="dinner"></div>
+                  
+                      <div class="mobile-meal-label">Snack:</div>
+                      <div class="mobile-meal" data-day="friday" data-meal="snacks"></div>
+                    </div>
+                  
+                    <!-- Saturday -->
+                    <div class="mobile-day">
+                      <h3>Saturday</h3>
+                      <div class="mobile-meal-label">Breakfast:</div>
+                      <div class="mobile-meal" data-day="saturday" data-meal="breakfast"></div>
+                  
+                      <div class="mobile-meal-label">Lunch:</div>
+                      <div class="mobile-meal" data-day="saturday" data-meal="lunch"></div>
+                  
+                      <div class="mobile-meal-label">Dinner:</div>
+                      <div class="mobile-meal" data-day="saturday" data-meal="dinner"></div>
+                  
+                      <div class="mobile-meal-label">Snack:</div>
+                      <div class="mobile-meal" data-day="saturday" data-meal="snacks"></div>
+                    </div>
+                  </div>
+                  
+                <!-- Repeat the above block for Wednesday through Sunday -->
+              </div>
+              
+        </div>
+    </section>
+
+    <script src="js/meal_plan.js"></script>
+</body>
+
+</html>
+

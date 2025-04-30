@@ -1,0 +1,363 @@
+:root{
+    --text: #000000;
+    --button_green: #426B1F;
+    --background: #FFFFFF;
+    --header_div: #E6E6E6;
+    --item_background: #FAFAF5;
+    --tiny_text: #6D6D6D;
+}
+
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 12px;
+    background-color: var(--button_green);
+    color: #fff;
+    font-weight: 500;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    width: fit-content;
+    font-family: inherit;
+}
+
+.button:hover {
+    background-color: #355318;
+}
+
+.button-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    object-fit: contain;
+}
+
+
+.pg_header .search-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(395px, 1fr));
+    gap: 20px;
+
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; /* aligns top edges */
+    gap: 16px;
+    border: 1px solid #ccc;
+    padding: 16px;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.card-text {
+    flex: 1; /* Let it take available space */
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.button-column {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 150px; /* Prevents narrow stacking */
+}
+
+
+
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+
+/* .card img {
+    width: 100%;
+    height: 296px;
+    object-fit: cover;
+} */
+.card-image {
+    flex: 0 0 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-image img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    display: block;
+}
+
+
+.card-text h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.card-text h3 {
+    padding-top: 10px;
+    margin: 0;
+}
+
+.card-text .prep-text {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--tiny_text);
+}
+
+.card-text .calories {
+    margin: 0;
+    color: #426B1F;
+}
+
+
+.add_label {
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 8px;
+}
+
+.inspect-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 12px;
+    background-color: #426B1F;
+    color: #fff;
+    font-weight: 500;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    width: fit-content;
+}
+
+.inspect-button:hover {
+    background-color: #355318;
+}
+
+.inspect-button .inspect-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    object-fit: contain;
+}
+
+:root{
+    --text: #000000;
+    --button_green: #426B1F;
+    --background: #FFFFFF;
+    --header_div: #E6E6E6;
+    --item_background: #FAFAF5;
+    --tiny_text: #6D6D6D;
+}
+
+
+
+.pg_header .search-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(395px, 1fr));
+    gap: 20px;
+
+}
+
+
+.card {
+    display: flex;
+    flex-direction: row;
+    flex: 0 1 395px;
+    height: auto;
+    border-radius: 24px;
+    background-color: #FAFAF5;
+    border: 2px solid #E6E6E6;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+    align-items: center;
+    padding: 16px;
+}
+
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+
+/* .card img {
+    width: 100%;
+    height: 296px;
+    object-fit: cover;
+} */
+.card-image {
+    flex: 0 0 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-image img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    display: block;
+}
+
+
+.card-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 16px;
+}
+
+
+.card-text h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.card-text h3 {
+    padding-top: 10px;
+    margin: 0;
+}
+
+.card-text .prep-text {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--tiny_text);
+}
+
+.card-text .calories {
+    margin: 0;
+    color: #426B1F;
+}
+
+
+.add_label {
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 8px;
+}
+
+.inspect-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 12px;
+    background-color: #426B1F;
+    color: #fff;
+    font-weight: 500;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    width: fit-content;
+}
+
+.inspect-button:hover {
+    background-color: #355318;
+}
+
+.button-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    object-fit: contain;
+}
+
+
+/* Tablet (768px and down) */
+@media (max-width: 768px) {
+    /* table {
+        display: none;
+      }
+    
+      .breakfast, .lunch, .dinner, .snacks,
+      .sun, .mon, .tues, .wed, .thurs, .fri, .sat {
+        display: none;  Hides them on mobile 
+      } */
+    .cards {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 16px;
+    }
+
+    .card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .card-image {
+        margin-bottom: 12px;
+    }
+
+    .card-text {
+        padding-left: 0;
+        align-items: center;
+    }
+
+    .button-column {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .button {
+        margin: 6px;
+    }
+}
+
+/* Mobile (480px and down) */
+@media (max-width: 480px) {
+    .cards {
+        grid-template-columns: 1fr;
+        padding: 0 12px;
+    }
+
+    .card {
+        padding: 12px;
+    }
+
+    .card-text h2 {
+        font-size: 18px;
+    }
+
+    .card-text h3,
+    .card-text .prep-text,
+    .card-text .calories {
+        font-size: 14px;
+    }
+
+    .button {
+        font-size: 14px;
+        padding: 6px 10px;
+    }
+
+    .button-icon {
+        width: 14px;
+        height: 14px;
+        margin-right: 6px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}

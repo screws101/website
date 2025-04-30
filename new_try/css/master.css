@@ -1,0 +1,285 @@
+*{
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root{
+    --text: #000000;
+    --button_green: #426B1F;
+    --background: #FFFFFF;
+    --header_div: #E6E6E6;
+    --item_background: #FAFAF5;
+    --tiny_text: #6D6D6D;
+}
+
+/* navbar */
+section{
+    min-width: 100%;
+    min-height: 100vh;
+}
+
+/* entire page */
+.hero-page{
+    display: flex;
+    flex-direction: column;
+}
+
+nav{
+    /* background-color: cadetblue; */
+    height: 112px;
+    width: 86.5277778%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    color: var(--text);
+    box-sizing: border-box;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 112px;
+    object-fit: contain;
+    display: block;
+}
+/* 
+nav div{
+    display: flex;
+    align-items: center;
+} */
+
+nav ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 81%;
+    margin: 0 auto;
+    padding-left: 0;
+    list-style: none;
+    float: none;
+}
+
+nav ul li{
+    display: block;
+    line-height: 130%;
+    text-align: center;
+    margin: 0;
+    /* background-color: #426B1F; */
+}
+
+nav ul li a{
+    color: var(--text);
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+a:hover {
+    opacity: 70%;
+}
+
+.checkbtn{
+    cursor: pointer;
+    display: none;
+}
+
+#check{
+    display:none;
+}
+
+/* .btn-1{
+    background-color: var(--button_green);
+    color: white;
+    font-family: "Inter", sans-serif;
+    border: none;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    width: 126px;
+    height: 48px;       
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.5s ease-in-out;
+} */
+
+/* Grocery List styled as button in nav */
+.btn-nav {
+    background-color: var(--button_green);
+    color: white;
+    font-weight: 600;
+    padding: 10px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-nav:hover {
+    opacity: 0.8;
+}
+
+
+.pg_header {
+    width: 86.5277778%;
+    height: 149px;
+    /* background-color: aqua; */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: end;
+    color: var(--text);
+    font-size: 64px;
+}
+
+.bottom_container{
+    /* background-color: cornflowerblue; */
+    width: 86.5277778%;
+    height: calc(100vh - 149px);
+    margin: 0 auto;
+}
+
+.pg_header .header_name{
+    font-weight: 400;
+    font-family: "Newsreader", serif;
+    margin-bottom: 16px;
+}
+
+.pg_header hr.solid{
+    width: 100%;
+    border-top: 2px solid var(--item_background);
+}
+
+.title{
+    font-weight: 600;
+    font-family: "Newsreader", serif;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.step{
+    color: var(--text);
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    text-decoration: none;
+    margin-bottom: 5px;
+}
+
+.txt {
+    color: var(--text);
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+/* media queries */
+/* Mobile phones (up to 480px) */
+@media (max-width: 480px) {
+    nav {
+        flex-direction: column;
+        height: auto;
+        padding: 1rem 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .btn-1 {
+        width: 100%;
+        height: 44px;
+        margin-top: 10px;
+    }
+
+    .pg_header {
+        font-size: 36px;
+        height: auto;
+    }
+
+    .pg_header .header_name {
+        font-size: 32px;
+    }
+
+    .bottom_container {
+        height: auto;
+    }
+
+    .logo img {
+        height: 64px;
+    }
+
+    .checkbtn {
+        display: block;
+        font-size: 24px;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    #check:checked ~ ul {
+        display: flex;
+    }
+}
+
+/* Tablets (481px to 768px) */
+@media (max-width: 768px) {
+    nav {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 1rem 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .pg_header {
+        height: auto;
+        font-size: 48px;
+    }
+
+    .pg_header .header_name {
+        font-size: 40px;
+    }
+
+    .logo img {
+        height: 80px;
+    }
+
+    .btn-1 {
+        margin-top: 10px;
+    }
+
+    .checkbtn {
+        display: block;
+        font-size: 28px;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    #check:checked ~ ul {
+        display: flex;
+    }
+}

@@ -1,0 +1,45 @@
+:root{
+    --text: #000000;
+    --button_green: #426B1F;
+    --background: #FFFFFF;
+    --header_div: #E6E6E6;
+    --item_background: #FAFAF5;
+    --tiny_text: #6D6D6D;
+}
+
+.bottom_container {
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: column;
+    margin-left: 96px;
+    gap: 31px;
+    margin-right: 96px;
+    flex-wrap: wrap;
+  }
+  
+
+/* inspect.css */
+
+h2 {
+  font-family: "Inter", sans-serif;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+  
+  p {
+    margin: 0.5rem 0;
+  }
+  
+  ul, ol {
+    padding-left: 1.5rem;
+  }
+  
+  hr.solid {
+    border: none;
+    border-top: 3px solid #888;  /* adjust size/color here */
+    width: 20%;
+    margin: 1rem 0;
+  }
+  
+
+  

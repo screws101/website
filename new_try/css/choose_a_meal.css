@@ -1,0 +1,120 @@
+:root {
+    --text: #000000;
+    --button_green: #426B1F;
+    --background: #FFFFFF;
+    --header_div: #E6E6E6;
+    --item_background: #FAFAF5;
+    --tiny_text: #6D6D6D;
+}
+
+.bottom_container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px; /* Adds space between the two buttons */
+}
+
+/* If you need more control over the space between the buttons specifically */
+.bottom_container .left, 
+.bottom_container .right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.bottom_container hr.solid {
+    width: 150px;
+    height: 2px;
+    background-color: var(--header_div);
+    border: none;
+    transform: rotate(90deg);
+    margin: 0;
+}
+
+/* Buttons Style */
+.new, .existing {
+    width: 195px;
+    height: 48px;
+    border-radius: 4px;
+    background-color: #426B1F;
+    color: #FFFFFF;
+    border-style: none;
+    cursor: pointer;
+    margin: 10px 0; /* Add vertical margin between the buttons */
+}
+
+/* Media Queries */
+
+/* Tablet (<= 1024px) */
+@media (max-width: 1024px) {
+    .bottom_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .bottom_container hr.solid {
+        display: none; /* Hide the divider */
+    }
+
+    .new, .existing {
+        width: 160px;
+        height: 42px;
+    }
+}
+
+/* Mobile (<= 768px) */
+@media (max-width: 768px) {
+    .bottom_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .bottom_container hr.solid {
+        display: none; /* Hide the divider */
+    }
+
+    .new, .existing {
+        width: 140px;
+        height: 38px;
+        font-size: 14px;
+    }
+
+    /* nav {
+        display: block;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    } */
+
+    .checkbtn {
+        display: block;
+        font-size: 24px;
+    }
+}
+
+/* Extra Small (<= 480px) */
+@media (max-width: 480px) {
+    .bottom_container {
+        padding: 10px;
+    }
+
+    .new, .existing {
+        width: 120px;
+        height: 35px;
+        font-size: 12px;
+    }
+
+    .bottom_container hr.solid {
+        display: none; /* Ensure the divider is hidden here too */
+    }
+}
+

@@ -1,0 +1,198 @@
+
+.pg_header .search-container {
+    float: right;
+}
+
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* <<< changed from space-between */
+    gap: 20px; /* still allows spacing between cards */
+}
+
+
+
+.card {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 395px;
+    height: 444px;
+    border-radius: 24px;
+    background-color: #FAFAF5;
+    border: 2px solid #E6E6E6;
+    overflow: hidden;
+}
+
+
+.card img {
+    flex-shrink: 0;
+    width: 100%;
+    height: 296px;
+    object-fit: cover;
+}
+
+
+.card .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    flex-grow: 1;
+}
+
+.card .text h2 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.card .text h3 {
+    padding-top: 10px;
+}
+
+.card .text .calories {
+    margin: 0;
+    color: #426B1F;
+}
+
+
+.add-ingredient-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: none;
+    color: black;
+    font-size: 1rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.add-ingredient-btn:hover {
+    color: #426B1F;
+}
+
+.add-ingredient-btn .add_icon {
+    width: 18px;
+    height: 18px;
+}
+
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 0;
+}
+
+.btn-add-item {
+    background-color: var(--button_green);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-add-item:hover {
+    background-color: #365817;
+}
+
+
+.add_label {
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 8px;
+}
+
+.quantity-input {
+    width: 60px;
+    padding: 4px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-left: 6px;
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 1024px) {
+    .cards {
+        justify-content: center;
+    }
+
+    .card {
+        flex: 0 0 45%; /* Two cards per row on medium screens */
+        height: auto;
+    }
+
+    .card img {
+        height: 220px;
+    }
+
+    .btn-add-item {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
+
+/* Small devices (phones, less than 768px) */
+@media (max-width: 767px) {
+    nav ul {
+        flex-direction: column;
+        background-color: #fff;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        display: none;
+    }
+
+    #check:checked ~ ul {
+        display: flex;
+    }
+
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        flex: 0 0 90%; /* Full width on small screens */
+        height: auto;
+    }
+
+    .card img {
+        height: 200px;
+    }
+
+    .btn-add-item {
+        font-size: 16px;
+        padding: 10px 20px;
+        width: 100%;
+    }
+
+    .button-container {
+        justify-content: center;
+        padding: 10px 0;
+    }
+
+    .quantity-input {
+        width: 50px;
+    }
+
+    .pg_header .header_name {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .add-ingredient-btn {
+        font-size: 0.9rem;
+    }
+
+    .add-ingredient-btn .add_icon {
+        width: 16px;
+        height: 16px;
+    }
+}

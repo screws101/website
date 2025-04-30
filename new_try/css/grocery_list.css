@@ -1,0 +1,250 @@
+/* Default Layout (for larger screens) */
+#grocery-list-container {
+    display: flex;
+    justify-content: start;
+    margin-left: 96px;
+    gap: 31px;
+    margin-right: 96px;
+    flex-wrap: wrap;
+}
+
+.grocery-card {
+    display: flex;
+    align-items: center;
+    background-color: #f9f8f4;
+    border-radius: 16px;
+    width: 821px;
+    height: 160px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+    transition: box-shadow 0.2s ease;
+    overflow: hidden;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 12px;
+    background-color: #426B1F;
+    color: #fff;
+    font-weight: 500;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    width: fit-content;
+    font-family: inherit;
+}
+
+.button:hover {
+    background-color: #355318;
+}
+
+/* Add hover effect for grocery card */
+.grocery-card:hover {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.grocery-img {
+    width: 160px;
+    height: 100%;
+    object-fit: cover;
+}
+
+.grocery-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-grow: 1;
+    padding: 1rem;
+}
+
+.grocery-info h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+    color: #222;
+}
+
+.grocery-info p {
+    display: inline-block;
+    font-size: 0.9rem;
+    padding: 0.3rem 0.8rem;
+    background-color: white;
+    border-radius: 999px;
+    border: 1px solid #ccc;
+    width: fit-content;
+    margin: 0;
+    color: #333;
+}
+
+.add-ingredient {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #333;
+    font-size: 1rem;
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+.add-ingredient img {
+    width: 20px;
+    height: 20px;
+}
+
+.quantity-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+    padding: 0.3rem 0.8rem;
+    background-color: white;
+    border-radius: 999px;
+    border: 1px solid #ccc;
+    width: fit-content;
+    margin: 0;
+    color: #333;
+}
+
+.edit-icon {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+.edit-icon:hover {
+    opacity: 1;
+}
+
+.quantity-input {
+    font-size: 0.9rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+    border: 1px solid #ccc;
+    width: 50px;
+    text-align: center;
+    outline: none;
+}
+
+#clear-list-btn {
+    margin: 2rem 96px;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.button-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    object-fit: contain;
+}
+
+/* Media Queries for responsiveness */
+
+/* Small devices (portrait phones, less than 600px) */
+@media (max-width: 599px) {
+    #grocery-list-container {
+        display: block;
+        margin-left: 16px;
+        margin-right: 16px;
+        gap: 16px;
+    }
+
+    .grocery-card {
+        width: 100%;
+        height: auto;
+        margin-bottom: 16px;
+        box-shadow: none; /* Remove box-shadow for smaller screens */
+    }
+
+    .grocery-img {
+        width: 100px; /* Adjust image size */
+        height: auto;
+    }
+
+    .grocery-info h2 {
+        font-size: 1rem; /* Adjust font size */
+    }
+
+    .grocery-info p {
+        font-size: 0.8rem;
+    }
+
+    .button {
+        font-size: 0.9rem;
+        padding: 6px 10px;
+    }
+
+    #clear-list-btn {
+        margin: 1rem;
+        padding: 0.5rem 1rem;
+    }
+
+    /* Hide the "Add Item" button on mobile */
+    #add-item-btn {
+        display: none;
+    }
+}
+
+/* Medium devices (tablets, less than 768px) */
+@media (max-width: 767px) {
+    #grocery-list-container {
+        display: block;
+        margin-left: 16px;
+        margin-right: 16px;
+        gap: 20px;
+    }
+
+    .grocery-card {
+        width: 100%;
+        height: auto;
+        margin-bottom: 16px;
+    }
+
+    .grocery-img {
+        width: 120px; /* Adjust image size for tablets */
+        height: auto;
+    }
+
+    .grocery-info h2 {
+        font-size: 1.1rem;
+    }
+
+    .grocery-info p {
+        font-size: 0.9rem;
+    }
+
+    .button {
+        font-size: 1rem;
+        padding: 8px 12px;
+    }
+
+    #clear-list-btn {
+        margin: 1.5rem;
+        padding: 0.6rem 1.2rem;
+    }
+}
+
+/* Large devices (desktops, larger than 768px) */
+@media (min-width: 768px) {
+    #grocery-list-container {
+        display: flex;
+        justify-content: start;
+        gap: 31px;
+        margin-left: 96px;
+        margin-right: 96px;
+    }
+
+    .grocery-card {
+        width: 821px;
+        height: 160px;
+    }
+}

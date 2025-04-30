@@ -1,0 +1,419 @@
+:root{
+    --text: #000000;
+    --button_green: #426B1F;
+    --background: #FFFFFF;
+    --header_div: #E6E6E6;
+    --item_background: #FAFAF5;
+    --tiny_text: #6D6D6D;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: .6fr 1.1fr 1.1fr 1.1fr 1.1fr;
+    grid-auto-columns: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      ". sun mon tues wed thurs fri sat"
+      "breakfast table table table table table table table"
+      "lunch table table table table table table table"
+      "dinner table table table table table table table"
+      "snacks table table table table table table table";
+      width: 86.5277778%;
+      height: calc(100vh - 149px);
+      padding-bottom: 98px;
+  }
+
+    .table {
+        grid-area: table;
+        display: flex;
+        align-items: stretch;
+        justify-content: stretch;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    
+    .table table {
+        width: 100%;
+        height: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        table-layout: fixed;
+        border-radius: 12px;
+        overflow: hidden;
+        background-color: var(--item_background);
+    }
+
+    .table td {
+        border: 1px solid var(--text);
+        text-align: left;
+    }
+    
+  
+  .breakfast { grid-area: breakfast; }
+  
+  .lunch { grid-area: lunch; }
+  
+  .dinner { grid-area: dinner; }
+  
+  .snacks { grid-area: snacks; }
+  
+  .sat { grid-area: sat; }
+  
+  .sun { grid-area: sun; }
+  
+  .mon { grid-area: mon; }
+  
+  .tues { grid-area: tues; }
+  
+  .wed { grid-area: wed; }
+  
+  .thurs { grid-area: thurs; }
+  
+  .fri { grid-area: fri; }
+  
+
+    .sun,
+    .mon,
+    .tues,
+    .wed,
+    .thurs,
+    .fri,
+    .sat{
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        padding-bottom: 20px;
+        color: var(--text);
+        font-family: "Inter", sans-serif;
+        font-weight: 500;
+        font-size: 20px;
+    }
+
+.breakfast,
+.lunch,
+.dinner,
+.snacks {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding-right: 20px;
+  color: var(--text);
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+
+
+.table td {
+    border: 1px solid var(--text);
+}
+
+
+.table table tr:first-child td:first-child {
+    border-top-left-radius: 12px;
+}
+
+
+.table table tr:first-child td:last-child {
+    border-top-right-radius: 12px;
+}
+
+.table table tr:last-child td:first-child {
+    border-bottom-left-radius: 12px;
+}
+
+.table table tr:last-child td:last-child {
+    border-bottom-right-radius: 12px;
+}
+
+
+
+
+.btn_add_step {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+}
+
+.btn_add_step img {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+}
+
+
+td:hover .btn_add_step {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.clear-button-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.btn-clear {
+    background-color: var(--button_green);
+    color: white;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-clear:hover {
+    background-color: var(--button_green);
+}
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.popup {
+    background: white;
+    padding: 20px 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.popup-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.popup-btn {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--button_green);
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s;
+}
+
+.popup-btn:hover {
+    background-color: #2f4c15;
+}
+
+
+.delete-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    margin-top: 4px;
+}
+
+.delete-icon {
+    width: 18px;  /* adjust as needed */
+    height: 18px;
+    filter: grayscale(100%); /* optional */
+    transition: transform 0.2s;
+}
+
+.delete-icon:hover {
+    transform: scale(1.1);
+}
+
+.table tbody td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+.recipe-link {
+    display: block;
+    text-align: center;
+    color: #333; /* adjust to your color scheme */
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.recipe-link:hover {
+    text-decoration: underline;
+}
+
+
+/* media queries */
+/* ---------- Tablet (<= 1024px) ---------- */
+@media (max-width: 1024px) {
+    .container {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: auto;
+      grid-template-areas:
+        "sun mon tues wed"
+        "thurs fri sat ."
+        "breakfast table table table"
+        "lunch table table table"
+        "dinner table table table"
+        "snacks table table table";
+      height: auto;
+      padding-bottom: 40px;
+    }
+  
+    .table {
+      overflow-x: auto;
+    }
+  
+    .sun, .mon, .tues, .wed, .thurs, .fri, .sat,
+    .breakfast, .lunch, .dinner, .snacks {
+      font-size: 16px;
+    }
+  
+    .btn-clear {
+      font-size: 14px;
+      padding: 8px 16px;
+    }
+  }
+  
+  
+  /* ---------- Mobile (<= 768px) ---------- */
+  @media (max-width: 768px) {
+    .container {
+      display: block;
+      width: 95%;
+      margin: 0 auto;
+    }
+  
+    .table {
+      width: 100%;
+      overflow-x: auto;
+      margin-bottom: 20px;
+    }
+  
+    .table table {
+      min-width: 600px;
+    }
+  
+    .sun, .mon, .tues, .wed, .thurs, .fri, .sat,
+    .breakfast, .lunch, .dinner, .snacks {
+      font-size: 14px;
+      justify-content: flex-start;
+      padding: 8px 0;
+    }
+  
+    .clear-button-wrapper {
+      justify-content: center;
+    }
+  
+    .popup {
+      width: 90%;
+    }
+  
+    .popup-buttons {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .popup-btn {
+      width: 100%;
+    }
+  }
+
+  
+  /* Hide mobile layout on larger screens */
+.mobile-days {
+    display: none;
+  }
+  
+  /* Mobile view */
+  @media (max-width: 768px) {
+    table {
+      display: none;
+    }
+  
+    .breakfast, .lunch, .dinner, .snacks,
+    .sun, .mon, .tues, .wed, .thurs, .fri, .sat {
+        display: none; /* Hides them on mobile */
+    }
+    .mobile-days {
+      display: block;
+      padding: 1rem;
+    }
+  
+    .mobile-day {
+      margin-bottom: 2rem;
+      background: #f9f9f9;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+  
+    .mobile-meal-label {
+      font-weight: bold;
+      margin-top: 0.75rem;
+    }
+  
+    .mobile-meal {
+      margin-bottom: 1rem;
+      min-height: 40px;
+    }
+  
+    .btn_add_step img {
+      width: 20px;
+      height: 20px;
+    }
+  
+    .recipe-link {
+      display: inline-block;
+      margin-right: 10px;
+    }
+  
+    .delete-btn {
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+    }
+  
+    .delete-icon {
+      width: 18px;
+      height: 18px;
+    }
+
+    .btn_add_step {
+        visibility: visible; /* Ensure visibility on mobile */
+        opacity: 1;  /* Ensure it's fully opaque on mobile */
+        pointer-events: auto;  /* Allow interaction */
+    }
+
+    td:hover .btn_add_step {
+        visibility: visible;  /* Ensure button is visible on hover if applicable */
+        opacity: 1;
+        pointer-events: auto;
+    }
+  }
+  

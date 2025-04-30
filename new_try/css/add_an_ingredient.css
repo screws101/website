@@ -1,0 +1,60 @@
+.bottom_container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px;
+    flex-wrap: wrap;
+}
+.left-bottom,
+.right-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    flex: 1;
+    max-width: 600px;
+}
+
+.name,
+.ammount,
+.calories,
+.serving,
+.protein,
+.carbs,
+.fat {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.left-bottom .btn_create {
+    width: fit-content;
+    padding: 12px 24px;
+    border-radius: 4px;
+    background-color: #426B1F;
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+    margin-top: 16px;
+}
+
+
+.label {
+    margin-bottom: 4px;
+    font-weight: bold;
+}
+
+h3 {
+    margin: 0;
+    padding-bottom: 24px;
+
+}
+
+
+input[type="text"] {
+    width: 100%;
+    max-width: 366px;
+    height: 30px;
+    padding: 4px 8px;
+    border: 1px solid gray;
+    border-radius: 4px;
+}

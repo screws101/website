@@ -1,0 +1,99 @@
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px;
+}
+
+.bottom_container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+
+.left-bottom,
+.right-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    flex: 1;
+    max-width: 600px;
+}
+
+
+.name,
+.ingredients,
+.calories,
+.protein,
+.insert-url,
+.steps {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.label {
+    font-weight: bold;
+}
+
+h3 {
+    margin: 0;
+    padding-bottom: 24px;
+}
+
+
+input[type="text"] {
+    width: 100%;
+    max-width: 366px;
+    height: 30px;
+    padding: 4px 8px;
+    border: 1px solid gray;
+    border-radius: 4px;
+}
+
+
+.left-bottom .btn_create {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    border-radius: 4px;
+    background-color: #426B1F;
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+    margin-top: 16px;
+    width: fit-content;
+}
+
+
+.steps .btn_add_step {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
+    gap: 15px;
+}
+
+.btn_add_step img {
+    display: block;
+    width: 44px;
+    height: auto;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}

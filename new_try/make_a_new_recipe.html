@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- This is for responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	
+    <!-- css link -->
+    <link rel = "stylesheet" href = "css/master.css"/>
+    <link rel = "stylesheet" href = "css/make_a_new_recipe.css"/>
+
+
+    <!-- icon link -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    />
+
+    <!-- font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href = "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap"
+        rel="stylesheet"
+    />
+
+
+    <title>Make a New Recipe</title>
+
+
+</head>
+<!-- end of head -->
+
+
+<body>
+
+    <section class = "hero-page">
+
+        <!-- navbar -->
+        <nav>
+            <input type = "checkbox" id = "check">        <!-- invisible checkbox for menu -->
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Logo">
+            </a>
+            <label for="check" class="checkbtn">        <!-- makes a label for the hamburger icon and links it to the checkbox with check -->
+                <i class="fas fa-bars"></i>        <!-- when you click on it it toggles the checkbox state -->
+            </label>
+
+            <ul>
+                <li><a href="index.html" onClick="uncheckCheckbox()">Home</a></li>
+                <li><a href="meal_plan.html" onClick="uncheckCheckbox()">Meal Plan</a></li>
+                <li><a href="your_pantry.html" onClick="uncheckCheckbox()">Your Pantry</a></li>
+                <li><a href="recipes.html" onClick="uncheckCheckbox()">Recipes</a></li>
+                <li>
+                    <a href="grocery_list.html" class="btn-nav" onClick="uncheckCheckbox()">Grocery List</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- navbar end -->
+
+        <!-- Heropage content -->
+        <div class = "pg_header">
+            <h1 class = "header_name">Make a New Recipe</h1>
+            <hr class = "solid">
+        </div>
+        
+        <main>
+            <div class = "bottom_container">
+                <div class = "left-bottom">
+                    <div class = "insert-url">
+                        <p class = "label">INSERT URL</p>
+                        <input type="text" placeholder="Enter recipe URL">
+                    </div>
+                    <h3>OR</h3>
+                    <div class = "name">
+                        <p class = "label">NAME</p>
+                        <input type="text" placeholder="Enter recipe name">
+                    </div>
+                    <div class="ingredients">
+                        <p class="label">INGREDIENTS</p>
+                        <div id="ingredient-list">
+                          <!-- Bullet points will appear here -->
+                          <ul id="ingredients-display"></ul>
+                        </div>
+                        <input type="text" id="ingredient-input" placeholder="Enter an ingredient and press Enter">
+                      </div>
+                      
+                    <div class = "calories">
+                        <p class = "label">CALORIES</p>
+                        <input type="text" placeholder="Enter recipe calories">
+                    </div>
+                    <div class = "protein">
+                        <p class = "label">PROTEIN</p>
+                        <input type="text" placeholder="Enter recipe protein">
+                    </div>
+                    <div class="prep-time">
+                        <p class="label">PREP TIME</p>
+                        <div>
+                            <input id="prep-time-hours" type="number" min="0" placeholder="Hours" />
+                            <input id="prep-time-minutes" type="number" min="0" placeholder="Minutes" />
+                        </div>
+                    </div>                    
+                    <button class="btn_create">Create</button>
+                </div>
+                <div class="divider"></div>
+                <div class = "right-bottom">
+                    <div class = "steps">
+                        <p class = "label">ENTER STEPS</p>
+                        <div id="steps-container">
+                            <!-- Step inputs add here -->
+                            <div class="step" id="step-1">
+                                <label>1.</label>
+                                <input type="text" placeholder="Enter step">
+                            </div>
+                        </div>
+                        <button class="btn_add_step" id="add-step-button">
+                            <img src="images/black_icon_plus copy.png" />
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </section>
+
+    <script src="js/make_a_new_recipe.js"></script>
+</body>
+
+</html>
