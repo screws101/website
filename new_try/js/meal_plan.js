@@ -19,8 +19,6 @@ function uncheckCheckbox() {
   }
   
 
-
-  // Utility: Detect mobile layout (you can also check window width if needed)
   function isMobileLayout() {
     return window.getComputedStyle(document.querySelector('.mobile-days'))?.display !== 'none';
   }
