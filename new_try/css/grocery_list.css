@@ -1,4 +1,13 @@
-/* Default Layout (for larger screens) */
+:root{
+    --text: #000000;
+    --button_green: #426B1F;
+    --background: #FFFFFF;
+    --header_div: #E6E6E6;
+    --item_background: #FAFAF5;
+    --tiny_text: #6D6D6D;
+}
+
+
 #grocery-list-container {
     display: flex;
     justify-content: start;
@@ -6,6 +15,7 @@
     gap: 31px;
     margin-right: 96px;
     flex-wrap: wrap;
+    margin-top: 1rem;
 }
 
 .grocery-card {
@@ -39,7 +49,6 @@
     background-color: #355318;
 }
 
-/* Add hover effect for grocery card */
 .grocery-card:hover {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
 }
@@ -78,19 +87,27 @@
     color: #333;
 }
 
-.add-ingredient {
-    display: flex;
+.add-ingredient-btn {
+    display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    color: #333;
+    margin: 2rem 96px;
+    gap: 8px;
+    background: none;
+    border: none;
+    color: black;
     font-size: 1rem;
-    margin-top: 2rem;
+    font-family: inherit;
     cursor: pointer;
+    transition: color 0.2s ease;
 }
 
-.add-ingredient img {
-    width: 20px;
-    height: 20px;
+.add-ingredient-btn:hover {
+    color: #426B1F;
+}
+
+.add-ingredient-btn .add_icon {
+    width: 18px;
+    height: 18px;
 }
 
 .quantity-pill {
@@ -130,12 +147,15 @@
 }
 
 #clear-list-btn {
-    margin: 2rem 96px;
-    padding: 0.6rem 1.2rem;
+    margin-right:192px;
+    margin-left: 10px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 0.6rem 1rem;
     font-size: 1rem;
     color: white;
     border: none;
-    border-radius: 12px;
+    border-radius: 20px;
     cursor: pointer;
     transition: background-color 0.2s ease;
 }
@@ -147,9 +167,9 @@
     object-fit: contain;
 }
 
-/* Media Queries for responsiveness */
+/* Media Queries */
 
-/* Small devices (portrait phones, less than 600px) */
+/* Phone */
 @media (max-width: 599px) {
     #grocery-list-container {
         display: block;
@@ -162,16 +182,16 @@
         width: 100%;
         height: auto;
         margin-bottom: 16px;
-        box-shadow: none; /* Remove box-shadow for smaller screens */
+        box-shadow: none;
     }
 
     .grocery-img {
-        width: 100px; /* Adjust image size */
+        width: 100px;
         height: auto;
     }
 
     .grocery-info h2 {
-        font-size: 1rem; /* Adjust font size */
+        font-size: 1rem;
     }
 
     .grocery-info p {
@@ -184,17 +204,20 @@
     }
 
     #clear-list-btn {
-        margin: 1rem;
+        margin: 1rem 0 1rem 0;
         padding: 0.5rem 1rem;
     }
 
-    /* Hide the "Add Item" button on mobile */
+    #sort-list-btn {
+        margin-left: 0;
+    }
+
     #add-item-btn {
         display: none;
     }
 }
 
-/* Medium devices (tablets, less than 768px) */
+/* Tablet */
 @media (max-width: 767px) {
     #grocery-list-container {
         display: block;
@@ -210,7 +233,7 @@
     }
 
     .grocery-img {
-        width: 120px; /* Adjust image size for tablets */
+        width: 120px;
         height: auto;
     }
 
@@ -233,12 +256,12 @@
     }
 }
 
-/* Large devices (desktops, larger than 768px) */
+/* Normal */
 @media (min-width: 768px) {
     #grocery-list-container {
         display: flex;
         justify-content: start;
-        gap: 31px;
+        gap: 20px;
         margin-left: 96px;
         margin-right: 96px;
     }
@@ -248,3 +271,43 @@
         height: 160px;
     }
 }
+
+#sort-list-btn {
+    background-color: var(--button_green);
+    font-size: 0.95rem;
+  }
+  
+  #sort-list-btn:hover {
+    background-color: #36591a;
+  }
+
+.grocery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.grocery-header .header_name {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-family: "Newsreader", serif;
+}
+
+@media (max-width: 599px) {
+    .grocery-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .grocery-header .header_name {
+        font-size: 1.25rem;
+    }
+
+    #sort-list-btn {
+        align-self: flex-end;
+    }
+}
+

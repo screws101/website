@@ -1,142 +1,93 @@
 function uncheckCheckbox() {
-    document.getElementById("check").checked = false;
-  }
-  
-  function createAddButton() {
-    const btn = document.createElement('button');
-    btn.className = 'btn_add_step';
-  
-    const img = document.createElement('img');
-    img.src = 'images/black_icon_plus copy.png';
-    img.alt = 'Add';
-  
-    btn.appendChild(img);
-    btn.addEventListener('click', () => {
-      window.location.href = 'choose_a_meal.html';
+  document.getElementById("check").checked = false;
+}
+
+
+const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+const meals = ["Breakfast", "Lunch", "Dinner", "Snack"];
+const container = document.getElementById("cards-container");
+
+days.forEach(day => {
+    const card = document.createElement("div");
+    card.className = "card";
+
+    const title = document.createElement("h2");
+    title.textContent = day;
+    card.appendChild(title);
+
+    const buttonsDiv = document.createElement("div");
+    buttonsDiv.className = "meal-buttons";
+
+    meals.forEach(meal => {
+        const key = `${day}_${meal}`;
+        const savedRecipe = localStorage.getItem(key);
+
+        if (savedRecipe) {
+          const recipeContainer = document.createElement("div");
+          recipeContainer.className = "recipe-entry";
+      
+          const recipeLink = document.createElement("a");
+recipeLink.textContent = savedRecipe;
+recipeLink.href = `inspect.html?name=${encodeURIComponent(savedRecipe)}`;
+recipeLink.className = "recipe-label recipe-link";
+recipeLink.style.textDecoration = "none";
+recipeLink.style.color = "inherit";
+
+
+      
+          const deleteBtn = document.createElement("button");
+          deleteBtn.className = "delete-btn";
+          deleteBtn.innerHTML = "&times;";
+          deleteBtn.title = "Remove this meal";
+      
+          deleteBtn.addEventListener("click", () => {
+              localStorage.removeItem(key);
+              location.reload();
+          });
+      
+          recipeContainer.appendChild(recipeLink);
+          recipeContainer.appendChild(deleteBtn);
+          buttonsDiv.appendChild(recipeContainer);
+        } else {
+            const btn = document.createElement("button");
+            btn.textContent = meal;
+
+            btn.addEventListener("click", () => {
+                const query = `?day=${encodeURIComponent(day)}&meal=${encodeURIComponent(meal)}`;
+                window.location.href = `choose_a_meal.html${query}`;
+            });
+
+            buttonsDiv.appendChild(btn);
+        }
     });
-  
-    return btn;
-  }
-  
 
-  function isMobileLayout() {
-    return window.getComputedStyle(document.querySelector('.mobile-days'))?.display !== 'none';
-  }
-  
-  function renderMealPlan() {
-    const mealPlan = JSON.parse(localStorage.getItem("mealPlan")) || {};
-  
-    if (isMobileLayout()) {
-      const meals = document.querySelectorAll('.mobile-meal');
-
-      meals.forEach(mealDiv => {
-      mealDiv.innerHTML = '';
-
-      const day = mealDiv.dataset.day;
-      const meal = mealDiv.dataset.meal;
-      const key = `${day}-${meal}`;
-      const recipeName = mealPlan[key];
-
-      if (recipeName) {
-        const recipeLink = document.createElement('a');
-        recipeLink.textContent = recipeName;
-        recipeLink.href = `inspect.html?name=${encodeURIComponent(recipeName)}`;
-        recipeLink.className = 'recipe-link';
-
-        mealDiv.appendChild(recipeLink);
-
-        const deleteBtn = document.createElement('button');
-        deleteBtn.className = 'delete-btn';
-
-        const deleteIcon = document.createElement('img');
-        deleteIcon.src = 'images/minus.png';
-        deleteIcon.alt = 'Delete';
-        deleteIcon.className = 'delete-icon';
-
-        deleteBtn.appendChild(deleteIcon);
-
-        deleteBtn.addEventListener('click', () => {
-          mealDiv.innerHTML = '';
-          mealDiv.appendChild(createAddButton());
-
-          delete mealPlan[key];
-          localStorage.setItem('mealPlan', JSON.stringify(mealPlan));
-        });
-
-    mealDiv.appendChild(deleteBtn);
-  } else {
-    mealDiv.appendChild(createAddButton());
-  }
+    card.appendChild(buttonsDiv);
+    container.appendChild(card);
 });
 
-  
-    } else {
-      const tableCells = document.querySelectorAll("tbody td");
-  
-      tableCells.forEach((cell, index) => {
-        cell.innerHTML = ''; // Clear
-  
-        const recipeName = mealPlan[index];
-        if (recipeName) {
-          const recipeLink = document.createElement('a');
-          recipeLink.textContent = recipeName;
-          recipeLink.href = `inspect.html?name=${encodeURIComponent(recipeName)}`;
-          recipeLink.className = 'recipe-link';
-  
-          cell.appendChild(recipeLink);
-  
-          const deleteBtn = document.createElement('button');
-          deleteBtn.className = 'delete-btn';
-  
-          const deleteIcon = document.createElement('img');
-          deleteIcon.src = 'images/minus.png';
-          deleteIcon.alt = 'Delete';
-          deleteIcon.className = 'delete-icon';
-  
-          deleteBtn.appendChild(deleteIcon);
-  
-          deleteBtn.addEventListener('click', () => {
-            cell.innerHTML = '';
-            cell.appendChild(createAddButton());
-  
-            mealPlan[index] = '';
-            localStorage.setItem('mealPlan', JSON.stringify(mealPlan));
-          });
-  
-          cell.appendChild(deleteBtn);
-        } else {
-          cell.appendChild(createAddButton());
-        }
-      });
-    }
-  }
-  
-  document.addEventListener('DOMContentLoaded', () => {
-    renderMealPlan();
-  
-    // Confirm clear functionality
-    const clearButton = document.getElementById('clear-meal-plan');
-    const confirmPopup = document.getElementById('confirmPopup');
-    const confirmYes = document.getElementById('confirmYes');
-    const confirmNo = document.getElementById('confirmNo');
-  
-    clearButton.addEventListener('click', () => {
-      confirmPopup.style.display = 'flex';
+
+
+const clearButton = document.getElementById("clear-meal-plan");
+const confirmPopup = document.getElementById("confirmPopup");
+const confirmYes = document.getElementById("confirmYes");
+const confirmNo = document.getElementById("confirmNo");
+
+clearButton.addEventListener("click", () => {
+    confirmPopup.style.display = "flex";
+});
+
+confirmYes.addEventListener("click", () => {
+    days.forEach(day => {
+        meals.forEach(meal => {
+            const key = `${day}_${meal}`;
+            localStorage.removeItem(key);
+        });
     });
-  
-    confirmYes.addEventListener('click', () => {
-      localStorage.removeItem('mealPlan');
-      renderMealPlan(); // re-render
-      confirmPopup.style.display = 'none';
-    });
-  
-    confirmNo.addEventListener('click', () => {
-      confirmPopup.style.display = 'none';
-    });
-  });
-  
-  // Optional: re-render on resize if switching layout
-  window.addEventListener('resize', () => {
-    renderMealPlan();
-  });
-  
+    confirmPopup.style.display = "none";
+    location.reload();
+});
+
+confirmNo.addEventListener("click", () => {
+    confirmPopup.style.display = "none";
+});
+

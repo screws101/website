@@ -8,7 +8,6 @@
 }
 
 .bottom_container {
-    /* background-color: aqua; */
     display: flex;
     flex-direction: column;
     margin-left: 96px;
@@ -16,9 +15,7 @@
     margin-right: 96px;
     flex-wrap: wrap;
   }
-  
 
-/* inspect.css */
 
 h2 {
   font-family: "Inter", sans-serif;
@@ -36,10 +33,70 @@ h2 {
   
   hr.solid {
     border: none;
-    border-top: 3px solid #888;  /* adjust size/color here */
+    border-top: 3px solid #888;
     width: 20%;
     margin: 1rem 0;
   }
   
 
+  @media (max-width: 599px) {
+    .bottom_container {
+      margin-left: 16px;
+      margin-right: 16px;
+      gap: 24px;
+    }
+  
+    h2 {
+      font-size: 1.25rem;
+    }
+  
+    hr.solid {
+      width: 40%;
+      border-top: 2px solid #888;
+    }
+  
+    p {
+      font-size: 0.95rem;
+    }
+  
+    ul, ol {
+      padding-left: 1rem;
+    }
+  }
+
+
+
+
+
+
+
+  @media (max-width: 767px) {
+    .bottom_container {
+      margin-left: 32px;
+      margin-right: 32px;
+      gap: 28px;
+    }
+  
+    h2 {
+      font-size: 1.4rem;
+    }
+  
+    hr.solid {
+      width: 30%;
+    }
+  }
+
+  
+
+
+
+
+
+  @media (min-width: 1200px) {
+    .bottom_container {
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
   

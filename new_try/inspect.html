@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- This is for responsiveness -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	
-    <!-- css link -->
+    <!-- CSS stylesheets -->
     <link rel = "stylesheet" href = "css/master.css"/>
     <link rel = "stylesheet" href = "css/inspect.css"/>
 
-    <!-- icon link -->
+    <!-- Font Awesome for icons -->
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -18,7 +17,7 @@
         referrerpolicy="no-referrer"
     />
 
-    <!-- font link -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -38,14 +37,14 @@
 
     <section class = "hero-page">
 
-        <!-- navbar -->
+        <!-- Navigation bar -->
         <nav>
-            <input type = "checkbox" id = "check">        <!-- invisible checkbox for menu -->
+            <input type = "checkbox" id = "check">
             <a href="index.html" class="logo">
-                <img src="images/logo.png" alt="Logo">
+                <img src="images/app_logo.jpg" alt="Logo">
             </a>
-            <label for="check" class="checkbtn">        <!-- makes a label for the hamburger icon and links it to the checkbox with check -->
-                <i class="fas fa-bars"></i>        <!-- when you click on it it toggles the checkbox state -->
+            <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>
             </label>
 
             <ul>
@@ -58,41 +57,57 @@
                 </li>
             </ul>
         </nav>
-        <!-- navbar end -->
+        <!-- Navigation bar end -->
 
-        <!-- Heropage content -->
+        <!-- Page header -->
         <div class = "pg_header">
             <h1 class = "header_name">Inspect Recipe</h1>
             <hr class = "solid">
         </div>
+        <!-- End of page header -->
+
+        <!-- Bottom container/Main content for recipe details -->
         <div class = "bottom_container" >
+            <!-- Recipe name (to be filled dynamically) -->
             <div id="name"></div>
+
+            <!-- Preparation time -->
             <div id="prep">
                 <p>Prep Time: </p>
             </div>
+
+            <!-- URL recipe link -->
             <div id="url">
                 <p>Link: </p>
             </div>
+
+            <!-- Ingredient list section -->
             <div id="ingredients">
                 <h2>Ingredients</h2>
                 <hr class = "solid">
             </div>
+
+            <!-- Step-by-step instructions section -->
             <div id="steps">
                 <h2>Steps</h2>
                 <hr class = "solid">
             </div>
+
+            <!-- Calories content -->
             <div id="calories">
                 <p>Calories:</p>
             </div>
+
+            <!-- Protein content -->
             <div id="protein">
                 <p>Protein:</p>
             </div>
-
-
         </div>
+        <!-- End of bottom container -->
     </section>
 
 
+    <!-- JavaScript logic -->
     <script src="js/inspect.js"></script>
 </body>
 

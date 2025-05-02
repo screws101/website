@@ -46,14 +46,21 @@ h3 {
 }
 
 
-input[type="text"] {
+
+input[type="text"],
+input[type="number"],
+input[type="url"] {
     width: 100%;
     max-width: 366px;
     height: 30px;
     padding: 4px 8px;
     border: 1px solid gray;
     border-radius: 4px;
+    font-family: inherit;
+    font-size: 16px;
+    box-sizing: border-box;
 }
+
 
 
 .left-bottom .btn_create {
@@ -97,3 +104,37 @@ input[type="text"] {
     gap: 10px;
     margin-bottom: 8px;
 }
+  
+  /* Phone */
+@media (max-width: 767px) {
+    .bottom_container {
+      flex-direction: column;
+    }
+  
+    .right-bottom {
+      order: 1;
+    }
+  
+    .left-bottom {
+      order: 2;
+    }
+  
+    .btn_create {
+      order: 3;
+      align-self: flex-start;
+    }
+  }
+  
+  /* Tablet */
+  @media (min-width: 768px) {
+    .bottom_container {
+      flex-direction: row;
+    }
+  
+    .right-bottom,
+    .left-bottom,
+    .btn_create {
+      order: unset;
+    }
+  }
+  

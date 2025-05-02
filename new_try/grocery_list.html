@@ -2,15 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- This is for responsiveness -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	
-    <!-- css link -->
+    <!-- CSS stylesheets -->
     <link rel = "stylesheet" href = "css/master.css"/>
     <link rel = "stylesheet" href = "css/grocery_list.css"/>
 
 
-    <!-- icon link -->
+    <!-- Font Awesome for icons -->
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -19,7 +18,7 @@
         referrerpolicy="no-referrer"
     />
 
-    <!-- font link -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -39,14 +38,14 @@
 
     <section class = "hero-page">
 
-        <!-- navbar -->
+        <!-- Navigation bar -->
         <nav>
-            <input type = "checkbox" id = "check">        <!-- invisible checkbox for menu -->
+            <input type = "checkbox" id = "check">
             <a href="index.html" class="logo">
-                <img src="images/logo.png" alt="Logo">
+                <img src="images/app_logo.jpg" alt="Logo">
             </a>
-            <label for="check" class="checkbtn">        <!-- makes a label for the hamburger icon and links it to the checkbox with check -->
-                <i class="fas fa-bars"></i>        <!-- when you click on it it toggles the checkbox state -->
+            <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>
             </label>
 
             <ul>
@@ -59,21 +58,38 @@
                 </li>
             </ul>
         </nav>
-        <!-- navbar end -->
+        <!-- Navigation bar end -->
 
-        <!-- Heropage content -->
-        <div class = "pg_header">
-            <h1 class = "header_name">Grocery List</h1>
-            <hr class = "solid">
+        <!-- Page header -->
+        <div class="pg_header">
+            <div class="grocery-header">
+                <h1 class="header_name">Grocery List</h1>
+            </div>
+            <hr class="solid">
         </div>
+        <!-- End of page header -->
+                
 
+        <!-- Main content: grocery list actions and item cards -->
         <main id="grocery-list-container" class="grocery-list">
+            <div class="grocery-actions">
+                <!-- A-Z Sort button -->
+                <button id="sort-list-btn" class="button">Sort A–Z</button>
+
+                <!-- Clear List button -->
+                <button id="clear-list-btn" class="button">Clear Grocery List</button>
+            </div>
             <!-- Grocery cards go here -->
         </main>
-        <button id="clear-list-btn" class="button">Clear Grocery List</button>
-        <button id="add-item-btn" class="button">Add Item</button>
+
+        <!-- Add to Grocery List Button (with each card) -->
+        <button id="add-item-btn" class="add-ingredient-btn">
+            <img src="images/icons8-plus-50-no-pad copy.png" class="add_icon" alt="Add">
+            add to grocery list
+        </button>
     </section>
 
+    <!-- JavaScript logic -->
     <script src="js/grocery_list.js"></script>
 </body>
 

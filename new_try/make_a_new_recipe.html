@@ -2,15 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- This is for responsiveness -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	
-    <!-- css link -->
+    <!-- CSS stylesheets -->
     <link rel = "stylesheet" href = "css/master.css"/>
     <link rel = "stylesheet" href = "css/make_a_new_recipe.css"/>
 
 
-    <!-- icon link -->
+    <!-- Font Awesome for icons -->
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -19,7 +18,7 @@
         referrerpolicy="no-referrer"
     />
 
-    <!-- font link -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -39,14 +38,14 @@
 
     <section class = "hero-page">
 
-        <!-- navbar -->
+        <!-- Navigation bar -->
         <nav>
-            <input type = "checkbox" id = "check">        <!-- invisible checkbox for menu -->
+            <input type = "checkbox" id = "check">
             <a href="index.html" class="logo">
-                <img src="images/logo.png" alt="Logo">
+                <img src="images/app_logo.jpg" alt="Logo">
             </a>
-            <label for="check" class="checkbtn">        <!-- makes a label for the hamburger icon and links it to the checkbox with check -->
-                <i class="fas fa-bars"></i>        <!-- when you click on it it toggles the checkbox state -->
+            <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>
             </label>
 
             <ul>
@@ -59,56 +58,83 @@
                 </li>
             </ul>
         </nav>
-        <!-- navbar end -->
+        <!-- Navigation bar end -->
 
-        <!-- Heropage content -->
+        <!-- Page header -->
         <div class = "pg_header">
             <h1 class = "header_name">Make a New Recipe</h1>
             <hr class = "solid">
         </div>
+        <!-- End of page header -->
         
         <main>
+            <!-- Bottom Container -->
             <div class = "bottom_container">
+
+                <!-- Left half of bottom container -->
                 <div class = "left-bottom">
+
+                    <!-- Section to insert a recipe URL -->
                     <div class = "insert-url">
                         <p class = "label">INSERT URL</p>
-                        <input type="text" placeholder="Enter recipe URL">
+                        <input type="url" placeholder="https://example.com" required>
                     </div>
+
+                     <!-- Optional alternative to manually fill out instead of URL -->
                     <h3>OR</h3>
+
+                    <!-- Input field for recipe name -->
                     <div class = "name">
                         <p class = "label">NAME</p>
                         <input type="text" placeholder="Enter recipe name">
                     </div>
+
+                    <!-- Input for ingredients list -->
                     <div class="ingredients">
                         <p class="label">INGREDIENTS</p>
                         <div id="ingredient-list">
-                          <!-- Bullet points will appear here -->
+                          <!-- List of added ingredients displayed here (bullet points) -->
                           <ul id="ingredients-display"></ul>
                         </div>
+                        <!-- Input to add new ingredient, finished by using Enter key -->
                         <input type="text" id="ingredient-input" placeholder="Enter an ingredient and press Enter">
                       </div>
+                    
                       
-                    <div class = "calories">
+                    <!-- Input for calorie amount -->
+                      <div class = "calories">
                         <p class = "label">CALORIES</p>
-                        <input type="text" placeholder="Enter recipe calories">
+                        <input type="number" placeholder="Enter recipe calories">
                     </div>
+
+                    <!-- Input for protein amount -->
                     <div class = "protein">
                         <p class = "label">PROTEIN</p>
-                        <input type="text" placeholder="Enter recipe protein">
+                        <input type="number" placeholder="Enter recipe protein">
                     </div>
+
+                    <!-- Input for prep time in hours and minutes -->
                     <div class="prep-time">
                         <p class="label">PREP TIME</p>
                         <div>
                             <input id="prep-time-hours" type="number" min="0" placeholder="Hours" />
                             <input id="prep-time-minutes" type="number" min="0" placeholder="Minutes" />
                         </div>
-                    </div>                    
+                    </div>       
+                    
+                    <!-- Create/Submit button -->
                     <button class="btn_create">Create</button>
                 </div>
+
+                <!-- Divider -->
                 <div class="divider"></div>
+
+                <!-- Right half of bottom container -->
                 <div class = "right-bottom">
                     <div class = "steps">
                         <p class = "label">ENTER STEPS</p>
+
+                        <!-- All step inputs appear here -->
                         <div id="steps-container">
                             <!-- Step inputs add here -->
                             <div class="step" id="step-1">
@@ -116,6 +142,8 @@
                                 <input type="text" placeholder="Enter step">
                             </div>
                         </div>
+
+                        <!-- Add step icon button -->
                         <button class="btn_add_step" id="add-step-button">
                             <img src="images/black_icon_plus copy.png" />
                         </button>
@@ -125,6 +153,7 @@
         </main>
     </section>
 
+    <!-- JavaScript logic -->
     <script src="js/make_a_new_recipe.js"></script>
 </body>
 

@@ -2,15 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- This is for responsiveness -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	
-    <!-- css link -->
+    <!-- CSS stylesheets -->
     <link rel = "stylesheet" href = "css/master.css"/>
     <link rel = "stylesheet" href = "css/add_an_ingredient.css"/>
 
 
-    <!-- icon link -->
+    <!-- Font Awesome for icons -->
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -19,7 +18,7 @@
         referrerpolicy="no-referrer"
     />
 
-    <!-- font link -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -39,14 +38,14 @@
 
     <section class = "hero-page">
 
-        <!-- navbar -->
+        <!-- Navigation bar -->
         <nav>
-            <input type = "checkbox" id = "check">        <!-- invisible checkbox for menu -->
+            <input type = "checkbox" id = "check">
             <a href="index.html" class="logo">
-                <img src="images/logo.png" alt="Logo">
+                <img src="images/app_logo.jpg" alt="Logo">
             </a>
-            <label for="check" class="checkbtn">        <!-- makes a label for the hamburger icon and links it to the checkbox with check -->
-                <i class="fas fa-bars"></i>        <!-- when you click on it it toggles the checkbox state -->
+            <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>
             </label>
 
             <ul>
@@ -59,17 +58,20 @@
                 </li>
             </ul>
         </nav>
-        <!-- navbar end -->
+        <!-- Navigation bar end -->
 
-        <!-- Heropage content -->
+        <!-- Page header -->
         <div class = "pg_header">
             <h1 class = "header_name">Add an Ingredient</h1>
             <hr class = "solid">
         </div>
+        <!-- End of page header -->
         
         <main>
+            <!-- Ingredient form -->
             <form id="ingredient-form">
                 <div class="bottom_container">
+                    <!-- Left column -->
                     <div class="left-bottom">
                         <div class="name">
                             <p class="label">NAME</p>
@@ -77,37 +79,44 @@
                         </div>
                         <div class="ammount">
                             <p class="label">AMOUNT</p>
-                            <input id="quantity" type="text" placeholder="Enter quantity" required>
+                            <input id="quantity" type="number" placeholder="Enter quantity" required>
                         </div>
                         <div class="calories">
                             <p class="label">CALORIES</p>
-                            <input id="calories" type="text" placeholder="Enter calories">
+                            <input id="calories" type="number" placeholder="Enter calories">
                         </div>
                         <div class="serving">
                             <p class="label">SERVING SIZE</p>
-                            <input id="servingSize" type="text" placeholder="Enter serving size">
+                            <input id="servingSize" type="number" placeholder="Enter serving size">
                         </div>
                         <button type="submit" class="btn_create">Create</button>
                     </div>
+                    <!-- End of left column -->
+
+                    <!-- Vertical divider -->
                     <div class="divider"></div>
+
+                    <!-- Right column -->
                     <div class="right-bottom">
                         <div class="protein">
                             <p class="label">PROTEIN</p>
-                            <input id="protein" type="text" placeholder="Enter protein">
+                            <input id="protein" type="number" placeholder="Enter protein">
                         </div>
                         <div class="carbs">
                             <p class="label">CARBS</p>
-                            <input id="carbs" type="text" placeholder="Enter carbs">
+                            <input id="carbs" type="number" placeholder="Enter carbs">
                         </div>
                         <div class="fat">
                             <p class="label">FAT</p>
-                            <input id="fat" type="text" placeholder="Enter fat">
+                            <input id="fat" type="number" placeholder="Enter fat">
                         </div>
                     </div>
+                    <!-- End of right column -->
                 </div>
             </form>
         </main>
 
+    <!-- JavaScript logic -->
     <script src="js/add_an_ingredient.js"></script>
 </body>
 

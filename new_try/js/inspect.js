@@ -8,7 +8,12 @@ console.log("Loaded recipe:", recipe);
 if (recipe) {
   document.getElementById("name").innerHTML = `<h2>${recipe.name || "Not Given"}</h2>`;
 
-  document.getElementById("prep").innerHTML = `<p><strong>Prep Time:</strong> ${recipe.prep || "Not Given"}</p>`;
+  let prepDisplay = recipe.prep || "Not Given";
+if (prepDisplay.toLowerCase().startsWith("prep:")) {
+  prepDisplay = prepDisplay.slice(5).trim();
+}
+document.getElementById("prep").innerHTML = `<p><strong>Prep Time:</strong> ${prepDisplay}</p>`;
+
 
   // URL handling
   document.getElementById("url").innerHTML = recipe.url

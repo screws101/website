@@ -26,6 +26,15 @@
 }
 
 
+input:invalid {
+    border: 2px solid red;
+  }
+  
+  input:valid {
+    border: 2px solid green;
+  }
+  
+
 .left-bottom .btn_create {
     width: fit-content;
     padding: 12px 24px;
@@ -50,11 +59,68 @@ h3 {
 }
 
 
-input[type="text"] {
+input[type="text"],
+input[type="number"] {
     width: 100%;
     max-width: 366px;
     height: 30px;
     padding: 4px 8px;
     border: 1px solid gray;
     border-radius: 4px;
+    box-sizing: border-box;
 }
+
+
+
+
+
+
+@media (max-width: 599px) {
+    .bottom_container {
+        flex-direction: column;
+        padding: 20px;
+        gap: 24px;
+    }
+
+    .left-bottom,
+    .right-bottom {
+        max-width: 100%;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+        max-width: 100%;
+    }
+
+    .left-bottom .btn_create {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+
+
+
+@media (max-width: 767px) {
+    .bottom_container {
+        flex-direction: column;
+        padding: 30px;
+        gap: 32px;
+    }
+
+    .left-bottom,
+    .right-bottom {
+        max-width: 100%;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+        max-width: 100%;
+    }
+}
+
+
+
+
+

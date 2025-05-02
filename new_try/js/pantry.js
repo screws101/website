@@ -5,28 +5,28 @@ function uncheckCheckbox() {
     localStorage.setItem("pantryItems", JSON.stringify(pantryItems));
 }
 
-const cardsContainer = document.getElementById("cards-container"); //holds all the cards?
+const cardsContainer = document.getElementById("cards-container");
 
-function createCard(item) { //function createCard takes 1 parameter: item object (I DONT THINK I DEFINED WHAT ITEM IS)
-    const cardDiv = document.createElement("div"); //a new <div> called cardDiv is made
-    cardDiv.classList.add("card");  //adds the class of "card" to cardDiv
+function createCard(item) {
+    const cardDiv = document.createElement("div");
+    cardDiv.classList.add("card");
 
     const img = document.createElement("img");
-    img.src = "images/ingredient.png"; // use a consistent icon for all pantry items
-    img.alt = "Pantry Item"; // general alt text, or you can still use item.name if you want
-    img.classList.add("card-image"); // optional: if you want the same class styling as recipes
+    img.src = "images/ingredient.png";
+    img.alt = "Pantry Item";
+    img.classList.add("card-image");
     cardDiv.appendChild(img);
 
 
-    const textDiv = document.createElement("div"); //new div element called textDiv is made to hold text shit
-    textDiv.classList.add("text"); //adds the class of "text" to texDiv 
+    const textDiv = document.createElement("div");
+    textDiv.classList.add("text");
 
-    const title = document.createElement("h2"); //creates an <h2> element called "title"
-    title.textContent = item.name;  //the text content of title is now set to the item.name
-    textDiv.appendChild(title);  //adds the <h2> element title to textDiv container
+    const title = document.createElement("h2");
+    title.textContent = item.name;
+    textDiv.appendChild(title);
 
-    const quantityDiv = document.createElement("div");  //a new <div> named "quantityDiv" is made (quantity of ingr)
-    quantityDiv.classList.add("calories");  //adds the class of "calories" (this is just going to hold a number, either calories or ammount)
+    const quantityDiv = document.createElement("div");
+    quantityDiv.classList.add("calories");
     const quantityLabel = document.createElement("label");
     quantityLabel.textContent = "Qty:";
     quantityLabel.setAttribute("for", `qty-${item.name}`);
@@ -69,7 +69,7 @@ textDiv.appendChild(quantityDiv);
     textDiv.appendChild(addButton);
 
     cardDiv.appendChild(textDiv);
-    return cardDiv; //returns the finished card
+    return cardDiv;
 }
 
 const savedPantryItems = JSON.parse(localStorage.getItem("pantryItems")) || pantryItems;
@@ -85,10 +85,8 @@ savedPantryItems.forEach(item => {
 function addToGroceryList(item) {
     let amount = prompt(`How much of "${item.name}" would you like to add?`);
 
-    // Cancelled prompt
     if (amount === null) return;
 
-    // Trim and validate the input
     amount = amount.trim();
 
     if (amount === "" || isNaN(amount) || Number(amount) <= 0) {
@@ -105,7 +103,7 @@ function addToGroceryList(item) {
         groceryList.push({
             name: item.name,
             quantity: quantity,
-            image: item.image || "images/ingredient.png" // fallback if item doesn't already include an image
+            image: item.image || "images/ingredient.png"
         });
         localStorage.setItem("groceryList", JSON.stringify(groceryList));
         alert(`${item.name} (${quantity}) added to grocery list!`);

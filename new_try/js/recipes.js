@@ -2,7 +2,7 @@ function uncheckCheckbox() {
     document.getElementById("check").checked = false;
   }
 
-const recipe_cardsContainer = document.getElementById("cards-container"); //holds all the cards?
+const recipe_cardsContainer = document.getElementById("cards-container");
 
 function createCard(item) {
     const cardDiv = document.createElement("div");
@@ -79,7 +79,7 @@ buttonContainer.classList.add("button-column");
     addToMealPlanButton.classList.add("button");
 
     const mealIcon = document.createElement("img");
-    mealIcon.src = "images/icons8-plus-50-no-pad copy.png"; // use your own calendar icon path
+    mealIcon.src = "images/icons8-plus-50-no-pad copy.png";
     mealIcon.alt = "Add to Meal Plan";
     mealIcon.classList.add("button-icon");
 
@@ -88,14 +88,21 @@ buttonContainer.classList.add("button-column");
 
 
     addToMealPlanButton.addEventListener("click", () => {
-        const mealPlan = JSON.parse(localStorage.getItem("mealPlan")) || [];
-
-        mealPlan.push(item.name);
-
-        localStorage.setItem("mealPlan", JSON.stringify(mealPlan));
-
-        alert(`Added "${item.name}" to your meal plan!`);
-    });
+        const urlParams = new URLSearchParams(window.location.search);
+        const day = urlParams.get("day");
+        const meal = urlParams.get("meal");
+    
+        if (!day || !meal) {
+            alert("Missing meal plan context (day/meal).");
+            return;
+        }
+    
+        const key = `${day}_${meal}`;
+        localStorage.setItem(key, item.name);
+    
+        alert(`Added "${item.name}" to ${day} ${meal}!`);
+        window.location.href = "meal_plan.html";
+    });    
 
 
 
@@ -105,7 +112,7 @@ const deleteButton = document.createElement("button");
 deleteButton.classList.add("button");
 
 const deleteIcon = document.createElement("img");
-deleteIcon.src = "images/trash.png"; // make sure this exists
+deleteIcon.src = "images/trash.png";
 deleteIcon.alt = "Delete";
 deleteIcon.classList.add("button-icon");
 
@@ -163,11 +170,18 @@ savedRecipes.forEach(item => {
     }
 
     if (!item.prep) {
-        item.prep = item.steps && item.steps.length
-            ? `Prep: ${item.steps.length} steps`
-            : "Prep: unknown";
+        item.prep = "Prep: unknown";
+    } else if (!item.prep.toLowerCase().startsWith("prep:")) {
+        item.prep = `Prep: ${item.prep}`;
     }
+    
 
     const card = createCard(item);
     recipe_cardsContainer.appendChild(card);
 });
+
+
+document.querySelector(".new").addEventListener("click", function () {
+    window.location.href = "make_a_new_recipe.html";
+  });
+  

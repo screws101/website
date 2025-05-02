@@ -1,4 +1,3 @@
-
 .pg_header .search-container {
     float: right;
 }
@@ -7,8 +6,8 @@
 .cards {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start; /* <<< changed from space-between */
-    gap: 20px; /* still allows spacing between cards */
+    justify-content: flex-start;
+    gap: 20px;
 }
 
 
@@ -116,14 +115,14 @@
     margin-left: 6px;
 }
 
-/* Medium devices (tablets, 768px and up) */
+/* Tablet */
 @media (max-width: 1024px) {
     .cards {
         justify-content: center;
     }
 
     .card {
-        flex: 0 0 45%; /* Two cards per row on medium screens */
+        flex: 0 0 45%;
         height: auto;
     }
 
@@ -137,7 +136,7 @@
     }
 }
 
-/* Small devices (phones, less than 768px) */
+/* Phone */
 @media (max-width: 767px) {
     nav ul {
         flex-direction: column;
@@ -159,7 +158,7 @@
     }
 
     .card {
-        flex: 0 0 90%; /* Full width on small screens */
+        flex: 0 0 90%;
         height: auto;
     }
 

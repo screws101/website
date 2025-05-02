@@ -50,7 +50,7 @@
 .card {
     display: flex;
     flex-direction: row;
-    align-items: flex-start; /* aligns top edges */
+    align-items: flex-start;
     gap: 16px;
     border: 1px solid #ccc;
     padding: 16px;
@@ -59,7 +59,7 @@
 }
 
 .card-text {
-    flex: 1; /* Let it take available space */
+    flex: 1;
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -69,7 +69,7 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
-    min-width: 150px; /* Prevents narrow stacking */
+    min-width: 150px;
 }
 
 
@@ -79,12 +79,6 @@
     transform: scale(1.02);
 }
 
-
-/* .card img {
-    width: 100%;
-    height: 296px;
-    object-fit: cover;
-} */
 .card-image {
     flex: 0 0 100px;
     display: flex;
@@ -199,11 +193,6 @@
 }
 
 
-/* .card img {
-    width: 100%;
-    height: 296px;
-    object-fit: cover;
-} */
 .card-image {
     flex: 0 0 100px;
     display: flex;
@@ -282,17 +271,32 @@
     object-fit: contain;
 }
 
+.button-container {
+    display: flex;
+    justify-content: flex-start;
+    padding: 20px 0;
+}
 
-/* Tablet (768px and down) */
+.btn-add-item {
+    background-color: transparent;
+    color: var(--text);
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-add-item:hover {
+    background-color: #365817;
+}
+
+
+
+
+/* Tablet */
 @media (max-width: 768px) {
-    /* table {
-        display: none;
-      }
-    
-      .breakfast, .lunch, .dinner, .snacks,
-      .sun, .mon, .tues, .wed, .thurs, .fri, .sat {
-        display: none;  Hides them on mobile 
-      } */
     .cards {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 16px;
@@ -324,7 +328,7 @@
     }
 }
 
-/* Mobile (480px and down) */
+/* Phone */
 @media (max-width: 480px) {
     .cards {
         grid-template-columns: 1fr;

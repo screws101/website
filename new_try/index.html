@@ -2,13 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- This is for responsiveness -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	
-    <!-- css link -->
+    <!-- CSS stylesheets -->
     <link rel = "stylesheet" href = "css/master.css"/>
 
-    <!-- icon link -->
+    <!-- Font Awesome icons -->
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -17,7 +16,7 @@
         referrerpolicy="no-referrer"
     />
 
-    <!-- font link -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -37,14 +36,14 @@
 
     <section class = "hero-page">
 
-        <!-- navbar -->
+        <!-- Navigation bar -->
         <nav>
-            <input type = "checkbox" id = "check">        <!-- invisible checkbox for menu -->
+            <input type = "checkbox" id = "check">
             <a href="index.html" class="logo">
-                <img src="images/logo.png" alt="Logo">
+                <img src="images/app_logo.jpg" alt="Logo">
             </a>
-            <label for="check" class="checkbtn">        <!-- makes a label for the hamburger icon and links it to the checkbox with check -->
-                <i class="fas fa-bars"></i>        <!-- when you click on it it toggles the checkbox state -->
+            <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>
             </label>
 
             <ul>
@@ -58,37 +57,139 @@
             </ul>
             
         </nav>
-        <!-- navbar end -->
+        <!-- Navigation bar end -->
 
-        <!-- Heropage content -->
+        <!-- Heropage header -->
         <div class = "pg_header">
             <h1 class = "header_name">Home</h1>
             <hr class = "solid">
         </div>
-        
+        <!-- end of header -->
+        <!-- bottom container content -->
         <div class = "bottom_container">
-            <h2 class = "title">How To Use This Tool</h2>
-            <p>Follow this step-by-step guide to create a meal plan, manage your pantry, and build your grocery list with ease.</p>
+            <section id="how-to-use">
+                <header>
+                <h1>How to Use Little Helper</h1>
+                </header>
+            
+                <ol>
+                <li>
+                    <article>
+                    <h2>Start with the Meal Plan</h2>
+                    <p>
+                        Head over to the <strong>Meal Plan</strong> page. Each day of the week has its own card, and each card includes four buttons: <em>Breakfast</em>, <em>Lunch</em>, <em>Dinner</em>, and <em>Snack</em>. These cards are your weekly meal prep guide.
+                    </p>
+                    <p>
+                        To get started, click a meal button for the day you want to plan. For example, if you only want to plan <strong>Sunday Breakfast</strong>, click the <em>Breakfast</em> button in Sunday’s card. This will take you to the <strong>Choose a Meal</strong> page.
+                    </p>
+                    </article>
+                </li>
+            
+                <li>
+                    <article>
+                    <h2>Choose or Create a Recipe</h2>
+                    <p>
+                        On the <strong>Choose a Meal</strong> page, you’ll be prompted to either <strong>select an existing recipe</strong> or <strong>create a new one</strong>.
+                    </p>
+                    <p>
+                        If you're starting fresh, click <em>Create a New Recipe</em>. Fill in any details you know — don't worry if you leave some fields blank (like the URL), Little Helper will let you know if something important is missing.
+                    </p>
+                    <p>
+                        Want to keep things simple? Just paste a link to the recipe in the <em>URL</em> section so you can access it later. When you're done, click <strong>Create</strong> to save the recipe. You’ll be taken to the <strong>Recipes</strong> page.
+                    </p>
+                    </article>
+                </li>
+            
+                <li>
+                    <article>
+                    <h2>Use the Recipes Page</h2>
+                    <p>
+                        Here, you’ll see a collection of all your recipes, including the one you just created. To add it to your meal plan, click the <strong>Add to Meal Plan</strong> button (with the plus icon). A pop-up will confirm that it’s been added.
+                    </p>
+                    <p>
+                        Use the <strong>Delete</strong> button to remove a recipe.
+                    </p>
+                    <p>
+                        Click <strong>Inspect</strong> to view full details like ingredients, steps, and notes.
+                    </p>
+                    <p>
+                        Later on, you can revisit this page to reuse recipes by clicking <strong>Choose Existing Recipe</strong> from the Choose a Meal page.
+                    </p>
+                    </article>
+                </li>
+            
+                <li>
+                    <article>
+                    <h2>Step 4: Return to the Meal Plan</h2>
+                    <p>
+                        Back on the <strong>Meal Plan</strong> page, you’ll now see your selected recipe name in place of the meal button you clicked earlier.
+                    </p>
+                    <p>
+                        Click the recipe name to view its details again (ingredients, steps, link, etc.). To remove it from the plan, click the <strong>X</strong> icon next to the name.
+                    </p>
+                    <p>
+                        At the bottom of the page, there’s a <strong>Clear Meal Plan</strong> button — this removes all meals from all days in one click.
+                    </p>
+                    </article>
+                </li>
+            
+                <li>
+                    <article>
+                    <h2>Step 5: Keep Track of Your Pantry</h2>
+                    <p>
+                        The <strong>Pantry</strong> page helps you monitor what you have and how much of it is available. Click <strong>Add a Pantry Item</strong> to go to the <strong>Add Ingredient</strong> page (similar to the recipe creation page).
+                    </p>
+                    <p>You can:</p>
+                    <p>Edit item quantities,</p>
+                    <p>
+                        Add items to your grocery list using the <strong>Add to Grocery List</strong> button on each pantry card. A pop-up will ask how much to add — enter the amount and confirm.
+                    </p>
+                    </article>
+                </li>
+            
+                <li>
+                    <article>
+                    <h2>Step 6: Manage Your Grocery List</h2>
+                    <p>
+                        The <strong>Grocery List</strong> page keeps track of what you need to buy. Items from your pantry will appear here with the requested quantity.
+                    </p>
+                    <p>You can:</p>
+                    <p>Edit quantities (click the pencil icon),</p>
+                    <p>Delete individual items,</p>
+                    <p>Clear the entire list,</p>
+                    <p>Sort items alphabetically with the <strong>A–Z</strong> button,</p>
+                    <p>Add a new item manually using the <strong>Add Item</strong> button (enter name and quantity in the pop-up)</p>
+                    </article>
+                </li>
+                
+                <li>
+                    <article>
+                    <h2>Here are some recommended places to find recipes:</h2>
+                    <ul>
+                        <li><a href="https://www.marthastewart.com/1509043/food-cooking" target="_blank" rel="noopener noreferrer">Martha Stewart - Food & Cooking</a></li>
+                        <li><a href="https://www.epicurious.com/recipes-menus" target="_blank" rel="noopener noreferrer">Epicurious Recipes & Menus</a></li>
+                        <li><a href="https://plantyou.com/recipes/" target="_blank" rel="noopener noreferrer">Plant You - Recipes</a></li>
+                        <li><a href="https://www.americastestkitchen.com/recipes" target="_blank" rel="noopener noreferrer">America’s Test Kitchen Recipes</a></li>
+                      </ul>
+                    </article>
+                </li>
 
-            <h3 class = "step">Step 1: Go to the Meal Plan page</h3>
-            <p class = "txt">Each day includes rows for <strong>three meals</strong>— breakfast, lunch, and dinner—and one for a <strong>snack</strong>. This will serve as your weekly meal prep guide. To add a meal, <strong>hover over a slot</strong> in the grid. A <strong>plus (+) icon</strong> will appear. Click it to go to the <strong>Choose a Meal</strong> page.</p>
+                </ol>
             
-            <h3 class = "step">Step 2: The Choose a Meal Page</h3>
-            <p class = "txt">It will prompt you to either pick an existing recipe or to create a new one. For now let’s just use make a new recipe. This page asks for all of the important details of a recipe. You don’t have to fill out every field if you don’t know it (for example, calories). You can add more steps to your recipe by pressing the plus icon underneath steps. If you would rather not, I suggest copying the link to your recipe and pasting it into the URL section- this way you can refer to your recipe right from the source. After your done click create and this will take you to the recipes page.</p>
+                <aside>
+                <p>Tip: Bookmark the Meal Plan page for quick access every week!</p>
+                </aside>
+            </section>
+
+            <p><strong>Happy Prepping!</strong></p>
+
+            <!-- Floated GIF -->
+            <img src="images/carrd gif.gif" alt="Instructional GIF" class="instruction-gif float-left">
             
-            <h3 class = "step">Step 3: Recipes Page</h3>
-            <p class = "txt">Each card is a different recipe, and after the previous step you should be able to find your newly created recipe here. Once you have, click the button that says “Add to Meal Plan” or has the plus icon. A pop up should show up saying that this meal has been added to your meal plan. In the future, once you have archived many recipes, you can click on the “Existing Recipe” button in the Choose a Meal Page instead which will take you to this recipes page.</p>
-            
-            <h3 class = "step">Step 4: Back to the Meal Plan page</h3>
-            <p class = "txt">You should be able to see your newly added meal’s name in the cell that you clicked. Clicking the name will take you to the recipe’s inspect page, which allows you to reference all of that important information again (steps, URL, etc.). Clicking on the minus icon underneath the name will remove the meal from the grid. At the bottom there is the “Clear Meal Plan” button, which clears the entire grid when clicked on.</p>
-            
-            <h3 class = "step">Step 5: Your pantry</h3>
-            <p class = "txt">This page can keep track of everything in your pantry as well as how much of it is there. To add an item to your pantry, click on the “Add a Pantry Item” button which will take you to the Add an Ingredient Page (very similar to the Create a Recipe page). You can also edit and change the quantity of an item in your pantry. On each card there is an Add to grocery list button. After clicking on it a pop up will appear asking how much you would like to add- enter a number and hit ok. Now go to your grocery list.</p>
-            
-            <h3 class = "step">Step 6: Grocery List</h3>
-            <p class = "txt">This page acts as your grocery list. What we did in the last step added that pantry item to our grocery list and how much is needed (which can also be edited by clicking on the pencil icon). You can delete individual items or clear the whole list. There is also an add item button, which when clicked on will ask for the name and quantity to be bought in a pop up.</p>
+            <!-- Clear float so that content does not wrap around the GIF -->
+            <div class="clear-float"></div>
         </div>
-        
+        <!-- end of bottom container content -->
     </section>
 
     <script>

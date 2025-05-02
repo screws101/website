@@ -68,10 +68,10 @@ function uncheckCheckbox() {
     });
 
     const deleteBtn = document.createElement("button");
-    deleteBtn.classList.add("button"); // reuse the inspect-style class
+    deleteBtn.classList.add("button");
 
     const icon = document.createElement("img");
-    icon.src = "images/trash.png"; // make sure this file exists
+    icon.src = "images/trash.png";
     icon.alt = "Delete";
     icon.classList.add("button-icon");
 
@@ -91,7 +91,7 @@ function uncheckCheckbox() {
   
     infoDiv.appendChild(name);
     infoDiv.appendChild(quantityPill);
-    infoDiv.appendChild(deleteBtn); // add delete button to info section
+    infoDiv.appendChild(deleteBtn);
     card.appendChild(img);
     card.appendChild(infoDiv);
   
@@ -118,6 +118,24 @@ document.getElementById("clear-list-btn").addEventListener("click", () => {
   }
 });
 
+document.getElementById("sort-list-btn").addEventListener("click", () => {
+  const storedList = JSON.parse(localStorage.getItem("groceryList")) || [];
+
+  // Sort items alphabetically by name
+  storedList.sort((a, b) => a.name.localeCompare(b.name));
+
+  // Save sorted list
+  localStorage.setItem("groceryList", JSON.stringify(storedList));
+
+  // Clear and re-render cards
+  groceryListContainer.innerHTML = "";
+  storedList.forEach(item => {
+    const card = addToGroceryList(item);
+    groceryListContainer.appendChild(card);
+  });
+});
+
+
 
 document.getElementById("add-item-btn").addEventListener("click", () => {
   const name = prompt("Enter item name:");
@@ -129,7 +147,7 @@ document.getElementById("add-item-btn").addEventListener("click", () => {
   const newItem = {
     name: name.trim(),
     quantity: quantity.trim(),
-    image: "images/ingredient.png", // Or any default image you prefer
+    image: "images/ingredient.png",
   };
 
   // Save to localStorage
@@ -141,3 +159,5 @@ document.getElementById("add-item-btn").addEventListener("click", () => {
   const card = addToGroceryList(newItem);
   groceryListContainer.appendChild(card);
 });
+
+

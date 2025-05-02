@@ -3,6 +3,12 @@
     font-family: "Inter", sans-serif;
     scroll-behavior: smooth;
 }
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 
 :root{
     --text: #000000;
@@ -26,7 +32,6 @@ section{
 }
 
 nav{
-    /* background-color: cadetblue; */
     height: 112px;
     width: 86.5277778%;
     display: flex;
@@ -47,11 +52,6 @@ nav{
     object-fit: contain;
     display: block;
 }
-/* 
-nav div{
-    display: flex;
-    align-items: center;
-} */
 
 nav ul {
     display: flex;
@@ -69,7 +69,6 @@ nav ul li{
     line-height: 130%;
     text-align: center;
     margin: 0;
-    /* background-color: #426B1F; */
 }
 
 nav ul li a{
@@ -95,25 +94,6 @@ a:hover {
     display:none;
 }
 
-/* .btn-1{
-    background-color: var(--button_green);
-    color: white;
-    font-family: "Inter", sans-serif;
-    border: none;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    width: 126px;
-    height: 48px;       
-    font-size: 16px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: all 0.5s ease-in-out;
-} */
-
-/* Grocery List styled as button in nav */
 .btn-nav {
     background-color: var(--button_green);
     color: white;
@@ -133,7 +113,6 @@ a:hover {
 .pg_header {
     width: 86.5277778%;
     height: 149px;
-    /* background-color: aqua; */
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -144,7 +123,6 @@ a:hover {
 }
 
 .bottom_container{
-    /* background-color: cornflowerblue; */
     width: 86.5277778%;
     height: calc(100vh - 149px);
     margin: 0 auto;
@@ -186,8 +164,26 @@ a:hover {
     margin-bottom: 20px;
 }
 
+.float-left {
+    float: left;
+    margin: 0 0 1em 1em;
+    max-width: 300px;
+    height: auto;
+  }
+
+  .bottom_container::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .clear-float {
+    clear: both;
+  }
+  
+
 /* media queries */
-/* Mobile phones (up to 480px) */
+/* Phone */
 @media (max-width: 480px) {
     nav {
         flex-direction: column;
@@ -239,7 +235,7 @@ a:hover {
     }
 }
 
-/* Tablets (481px to 768px) */
+/* Tablet */
 @media (max-width: 768px) {
     nav {
         flex-wrap: wrap;
@@ -281,5 +277,139 @@ a:hover {
 
     #check:checked ~ ul {
         display: flex;
+    }
+}
+
+
+
+#how-to-use {
+    width: 86.5277778%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 0;
+    background-color: var(--background);
+    color: var(--text);
+    font-family: "Inter", sans-serif;
+}
+
+
+#how-to-use header h1 {
+    font-family: "Newsreader", serif;
+    font-size: 36px;
+    margin-bottom: 24px;
+    color: var(--text);
+}
+
+#how-to-use ol {
+    counter-reset: step-counter;
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 40px;
+}
+
+#how-to-use li {
+    counter-increment: step-counter;
+    margin-bottom: 40px;
+    background-color: var(--item_background);
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+#how-to-use article h2::before {
+    content: counter(step-counter) ". ";
+    font-weight: 700;
+    margin-right: 4px;
+    color: var(--button_green);
+}
+
+#how-to-use article h2 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+#how-to-use p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+#how-to-use ul {
+    padding-left: 20px;
+    margin-top: 8px;
+    margin-bottom: 16px;
+}
+
+#how-to-use ul li {
+    list-style-type: disc;
+    margin-bottom: 6px;
+}
+
+#how-to-use aside {
+    font-size: 14px;
+    font-style: italic;
+    background-color: var(--header_div);
+    padding: 16px;
+    border-left: 4px solid var(--button_green);
+    border-radius: 8px;
+    margin-top: 20px;
+    color: var(--tiny_text);
+}
+
+
+.instruction-gif {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 40px auto 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+/* more media queries */
+
+@media (max-width: 768px) {
+    #how-to-use header h1 {
+        font-size: 28px;
+    }
+
+    #how-to-use article h2 {
+        font-size: 18px;
+    }
+
+    #how-to-use p, #how-to-use ul li {
+        font-size: 15px;
+    }
+
+    #how-to-use li {
+        padding: 16px;
+    }
+
+    .instruction-gif {
+        margin-top: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    #how-to-use header h1 {
+        font-size: 24px;
+    }
+
+    #how-to-use article h2 {
+        font-size: 16px;
+    }
+
+    #how-to-use p, #how-to-use ul li {
+        font-size: 14px;
+    }
+
+    #how-to-use li {
+        padding: 12px;
+    }
+
+    #how-to-use aside {
+        font-size: 13px;
+        padding: 12px;
     }
 }

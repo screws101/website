@@ -2,16 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- This is for responsiveness -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	
-    <!-- css link -->
+    <!-- CSS stylesheets -->
     <link rel = "stylesheet" href = "css/master.css"/>
     <link rel = "stylesheet" href = "css/your_pantry.css"/>
 
 
-    <!-- icon link -->
-    
+    <!-- Font Awesome for icons -->
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -20,7 +18,7 @@
         referrerpolicy="no-referrer"
     />
 
-    <!-- font link -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -40,14 +38,14 @@
 
     <section class = "hero-page">
 
-        <!-- navbar -->
+        <!-- Navigation bar -->
         <nav>
-            <input type = "checkbox" id = "check">        <!-- invisible checkbox for menu -->
+            <input type = "checkbox" id = "check">
             <a href="index.html" class="logo">
-                <img src="images/logo.png" alt="Logo">
+                <img src="images/app_logo.jpg" alt="Logo">
             </a>
-            <label for="check" class="checkbtn">        <!-- makes a label for the hamburger icon and links it to the checkbox with check -->
-                <i class="fas fa-bars"></i>        <!-- when you click on it it toggles the checkbox state -->
+            <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>
             </label>
 
             <ul>
@@ -60,28 +58,31 @@
                 </li>
             </ul>
         </nav>
-        <!-- navbar end -->
+        <!-- Navigation bar end -->
 
-        <!-- Heropage content -->
+        <!-- Page header -->
         <div class = "pg_header">
             <h1 class = "header_name">Your Pantry</h1>
             <hr class = "solid">
         </div>
+        <!-- End of page header -->
         
+        <!-- Bottom Container -->
         <div class = "bottom_container">
+
+            <!-- Add Pantry Item button -->
             <div class="button-container">
                 <button id="add-pantry-item-btn" class="btn-add-item">Add a Pantry Item</button>
             </div>
             <main class="cards" id="cards-container">
+                <!-- Cards display here -->
             </main>
         </div>
     </section>
 
 
-    <!-- Include data.js -->
+    <!-- JavaScript logic -->
     <script src="js/data.js"></script>
-
-    <!-- Include pantry.js -->
     <script src="js/pantry.js"></script>
 </body>
 

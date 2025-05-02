@@ -2,15 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- This is for responsiveness -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	
-    <!-- css link -->
+    <!-- CSS stylesheets -->
     <link rel = "stylesheet" href = "css/master.css"/>
     <link rel = "stylesheet" href = "css/choose_a_meal.css"/>
 
 
-    <!-- icon link -->
+    <!-- Font Awesome icons -->
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -19,7 +18,7 @@
         referrerpolicy="no-referrer"
     />
 
-    <!-- font link -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -39,14 +38,14 @@
 
     <section class = "hero-page">
 
-        <!-- navbar -->
+        <!-- Navigation bar -->
         <nav>
-            <input type = "checkbox" id = "check">        <!-- invisible checkbox for menu -->
+            <input type = "checkbox" id = "check">
             <a href="index.html" class="logo">
-                <img src="images/logo.png" alt="Logo">
+                <img src="images/app_logo.jpg" alt="Logo">
             </a>
-            <label for="check" class="checkbtn">        <!-- makes a label for the hamburger icon and links it to the checkbox with check -->
-                <i class="fas fa-bars"></i>        <!-- when you click on it it toggles the checkbox state -->
+            <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>
             </label>
 
             <ul>
@@ -59,25 +58,32 @@
                 </li>
             </ul>
         </nav>
-        <!-- navbar end -->
+        <!-- Navigation bar end -->
 
-        <!-- Heropage content -->
+        <!-- Page header -->
         <div class = "pg_header">
             <h1 class = "header_name">Choose a Meal</h1>
             <hr class = "solid">
         </div>
+        <!-- End of page header -->
         
+        <!-- Bottom Container -->
         <div class = "bottom_container">
+            <!-- Existing Recipes -->
             <div class="left">
                 <button type="button" class = "existing">Existing Recipe</button>
             </div>
+            <!-- Vertical Divider -->
             <hr class = "solid">
+            <!-- Make a New Recipe -->
             <div class="right">
                 <button type="button" class = "new">Make a New Recipe</button>
             </div>
         </div>
+        <!-- End of bottom Container -->
     </section>
 
+    <!-- JavaScript logic -->
     <script src="js/choose_a_meal.js"></script>
 </body>
 
